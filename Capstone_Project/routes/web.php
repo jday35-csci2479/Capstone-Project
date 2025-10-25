@@ -17,7 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Forums Routes
+// Forums routes
 
 // Forum portal page
 Route::get('/forums', function () {
