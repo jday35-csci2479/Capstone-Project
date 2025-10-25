@@ -19,42 +19,13 @@
                 <!--- Forum Portal Container -->
                 <div class="grid grid-cols-3 gap-x-0 gap-y-5 bg-gray-800 p-6 place-items-center">
 
-                    <!-- Columns and Links -->
-                    <div class="relative h-56 w-56 bg-gray-900 shadow sm:rounded-lg border-2 border-gray-700">
-                        <h1 class="absolute text-[50px] text-center text-white top-4 left-20">🗪</h1>
-                        <a href="/forums/generalDiscussion" class=" text-white text-center text-xl mt-24 block hover:text-blue-600">General Discussion</a>
-                        <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center">All things Columbus State</p>
-                    </div>
-
-                    <div class="relative h-56 w-56 bg-gray-900 shadow sm:rounded-lg border-2 border-gray-700">
-                        <h1 class="absolute text-[50px] text-center text-white top-4 left-20">📚</h1>
-                        <a href="/forums/homeworkHelp" class="text-white text-center text-xl mt-24 block hover:text-blue-600">Homework Help</a>
-                        <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center">Get assistance with your coursework</p>
-                    </div>
-
-                    <div class="relative h-56 w-56 bg-gray-900 shadow sm:rounded-lg border-2 border-gray-700">
-                        <h1 class="absolute text-[50px] text-center text-white top-4 left-20">🗣</h1>
-                        <a href="/forums/offTopic" class="text-white text-center text-xl mt-24 block hover:text-blue-600">Off Topic</a>
-                        <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center">Talk about anything</p>
-                    </div>
-
-                    <div class="relative h-56 w-56 bg-gray-900 shadow sm:rounded-lg border-2 border-gray-700">
-                        <h1 class="absolute text-[50px] text-center text-white top-4 left-20">❓</h1>
-                        <a href="/forums/support" class="text-white text-center text-xl mt-24 block hover:text-blue-600">Support</a>
-                        <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center">Technical support</p>
-                    </div>
-
-                    <div class="relative h-56 w-56 bg-gray-900 shadow sm:rounded-lg border-2 border-gray-700">
-                        <h1 class="absolute text-[50px] text-center text-white top-4 left-20">👋</h1>
-                        <a href="/forums/introductions" class="text-white text-center text-xl mt-24 block hover:text-blue-600">Introductions</a>
-                        <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center">Say hi and introduce yourself</p>
-                    </div>
-
-                    <div class="relative h-56 w-56 bg-gray-900 shadow sm:rounded-lg border-2 border-gray-700">
-                        <h1 class="absolute text-[50px] text-center text-white top-4 left-20">📆</h1>
-                        <a href="/forums/events" class="text-white text-center text-xl mt-24 block hover:text-blue-600">Events</a>
-                        <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center">Upcoming campus events</p>
-                    </div>
+                    <!-- Forum Portal Componenets -->
+                    <x-forum-card href="/forums/generalDiscussion" title="General Discussion" emoji="🗪" desc="All things Columbus State" />
+                    <x-forum-card href="/forums/homeworkHelp" title="Homework Help" emoji="📚" desc="Get assistance with your coursework" />
+                    <x-forum-card href="/forums/offTopic" title="Off Topic" emoji="🗣" desc="Talk about anything" />
+                    <x-forum-card href="/forums/support" title="Support" emoji="❓" desc="Technical support" />
+                    <x-forum-card href="/forums/introductions" title="Introductions" emoji="👋" desc="Say hi and introduce yourself" />
+                    <x-forum-card href="/forums/events" title="Events" emoji="📆" desc="Upcoming campus events" />
                 </div>
             </div>
     </div>
