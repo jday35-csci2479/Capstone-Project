@@ -4,7 +4,14 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "watch": "npm-watch"
+    },
+    "watch": {
+        "dev": {
+            "patterns": ["resources/"],
+            "extensions": "js,vue,ts,jsx,tsx,scss,css"
+        }
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
@@ -19,6 +26,7 @@
         "vite": "^7.0.7"
     },
     "dependencies": {
+        "npm-watch": "^0.13.0",
         "watch": "^1.0.2"
     }
 }

@@ -3,14 +3,16 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+// Default home page routes
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
+// Account setting management routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -18,7 +20,6 @@ Route::middleware('auth')->group(function () {
 });
 
 // Forums routes
-
 // Forum portal page
 Route::get('/forums', function () {
     return view('forums.portal');
@@ -31,5 +32,14 @@ Route::view('/forums/offTopic', 'forums.offTopic')->name('forums.offTopic');
 Route::view('/forums/support', 'forums.support')->name('forums.support');
 Route::view('/forums/introductions', 'forums.introductions')->name('forums.introductions');
 Route::view('/forums/events', 'forums.events')->name('forums.events');
+
+
+// User Profile routes
+Route::middleware('auth')->group(function() {
+    Route::get('/user-profile', function() {
+        return view('user-profile.edit'); 
+    })->name('user-profile.edit');
+});
+
 
 require __DIR__.'/auth.php';
