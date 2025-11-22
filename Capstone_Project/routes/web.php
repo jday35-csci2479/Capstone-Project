@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ForumsController;
+use App\Http\Controllers\ProfileController;
+
 
 // Default home page routes
 Route::get('/', function () {
@@ -19,7 +21,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Forums routes
+// Forums and comments routes
+
 // Forum portal page
 Route::get('/forums', function () {
     return view('forums.portal');
@@ -41,5 +44,20 @@ Route::middleware('auth')->group(function() {
     })->name('user-profile.edit');
 });
 
+// Forums CRUD routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('/forums/create', [ForumsController::class, 'create'])->name('forums.crud.create');
+    Route::post('/forums/store', [ForumsController::class, 'store'])->name('forums.crud.store');
+    Route::get('/forums/{forum}/edit', [ForumsController::class, 'edit'])->name('forums.crud.edit');
+    Route::patch('/forums/{forum}', [ForumsController::class, 'update'])->name('forums.crud.update');
+    Route::delete('/forums/{forum}', [ForumsController::class, 'destroy'])->name('forums.crud.destroy');
+    Route::get('/forums/{forum}', [ForumsController::class, 'show'])->name('forums.crud.show');
+});
+
+// Comments routes
+Route::middleware('auth')->group(function() {
+    Route::post('/forums/{forum}/comments', [\App\Http\Controllers\CommentsController::class, 'store'])
+        ->name('forums.comments.store');
+});
 
 require __DIR__.'/auth.php';
