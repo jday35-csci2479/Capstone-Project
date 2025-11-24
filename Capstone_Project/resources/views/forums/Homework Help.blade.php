@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Off Topic</h2>
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Homework Help</h2>
     </x-slot>
 
     <!--Primary Container-->
@@ -30,15 +30,25 @@
             <div class="p-6 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 
             @php
-                $forums = \App\Models\Forums::where('category', 'offTopic')->latest()->get();
+                $forums = \App\Models\Forums::where('category', 'Homework Help')->latest()->get();
             @endphp
                     @forelse($forums as $forum)
                         <div class="mb-8 border border-gray-700 pb-6 bg-gray-900 rounded-lg p-4">
+
+                            <!-- Title and Dropdown menu for Edit and Delete -->   
+                        <div class="flex mt-4">
 
                             <!-- Title -->
                             <h3 class="text-white text-2xl font-bold mb-2">
                                 {{ $forum->title }}
                             </h3>
+
+                            @auth
+                                @if($forum->user_id === auth()->id())
+                                    <x-forum-settings :forum="$forum" />
+                                @endif
+                            @endauth
+                        </div>
 
                             <!-- Date and View Discussion Button-->
                             <div class="flex mt-4">

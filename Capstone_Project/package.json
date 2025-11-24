@@ -9,7 +9,9 @@
     },
     "watch": {
         "dev": {
-            "patterns": ["resources/"],
+            "patterns": [
+                "resources/"
+            ],
             "extensions": "js,vue,ts,jsx,tsx,scss,css"
         }
     },
@@ -26,6 +28,7 @@
         "vite": "^7.0.7"
     },
     "dependencies": {
+        "@tailwindplus/elements": "^1.0.19",
         "npm-watch": "^0.13.0",
         "watch": "^1.0.2"
     }

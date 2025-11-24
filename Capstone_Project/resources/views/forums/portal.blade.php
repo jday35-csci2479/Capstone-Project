@@ -20,12 +20,12 @@
                 <div class="grid grid-cols-3 gap-x-0 gap-y-5 bg-gray-800 p-6 place-items-center">
 
                     <!-- Forum Portal Componenets -->
-                    <x-forum-card href="/forums/generalDiscussion" title="General Discussion" emoji="🗪" desc="All things Columbus State" />
-                    <x-forum-card href="/forums/homeworkHelp" title="Homework Help" emoji="📚" desc="Get assistance with your coursework" />
-                    <x-forum-card href="/forums/offTopic" title="Off Topic" emoji="🗣" desc="Talk about anything" />
-                    <x-forum-card href="/forums/support" title="Support" emoji="❓" desc="Technical support" />
-                    <x-forum-card href="/forums/introductions" title="Introductions" emoji="👋" desc="Say hi and introduce yourself" />
-                    <x-forum-card href="/forums/events" title="Events" emoji="📆" desc="Upcoming campus events" />
+                    <x-forum-card href="/forums/General Discussion" title="General Discussion" emoji="🗪" desc="All things Columbus State" />
+                    <x-forum-card href="/forums/Homework Help" title="Homework Help" emoji="📚" desc="Get assistance with your coursework" />
+                    <x-forum-card href="/forums/Off Topic" title="Off Topic" emoji="🗣" desc="Talk about anything" />
+                    <x-forum-card href="/forums/Support" title="Support" emoji="❓" desc="Technical support" />
+                    <x-forum-card href="/forums/Introductions" title="Introductions" emoji="👋" desc="Say hi and introduce yourself" />
+                    <x-forum-card href="/forums/Events" title="Events" emoji="📆" desc="Upcoming campus events" />
                 </div>
             </div>
     </div>

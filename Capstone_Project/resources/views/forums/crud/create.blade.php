@@ -32,12 +32,12 @@
                     <div class="mt-4">
                         <x-input-label for="category" :value="__('Chooose Topic')" />
                         <select id="category" name="category" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
-                            <option value="generalDiscussion">General Discussion</option>
-                            <option value="introductions">Introductions</option>
-                            <option value="support">Support</option>
-                            <option value="events">Events</option>
-                            <option value="offTopic">Off Topic</option>
-                            <option value ="homeworkHelp">Homework Help</option>
+                            <option value="General Discussion">General Discussion</option>
+                            <option value="Introductions">Introductions</option>
+                            <option value="Support">Support</option>
+                            <option value="Events">Events</option>
+                            <option value="Off Topic">Off Topic</option>
+                            <option value ="Homework Help">Homework Help</option>
                         </select>
                         <x-input-error :messages="$errors->get('category')" class="mt-2" />
                     </div>
