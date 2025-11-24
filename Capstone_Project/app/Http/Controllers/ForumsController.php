@@ -15,7 +15,7 @@ class ForumsController extends Controller
 
    public function edit(Forums $forum)
    {
-         return view('forums.crud.edit', compact('forum'));
+        return view('forums.crud.edit', compact('forum'));
    }
 
    public function update(Request $request, Forums $forum)
@@ -31,7 +31,7 @@ class ForumsController extends Controller
    }
 
    public function destroy(Forums $forum)
-   {
+   {        
         $forum->delete();
 
         return redirect()->route('forums.' . $forum->category, $forum)->with('success', 'Forum deleted successfully.');

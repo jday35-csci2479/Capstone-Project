@@ -29,12 +29,12 @@ Route::get('/forums', function () {
 })->name('forums');
 
 // Individual forum pages
-Route::view('/forums/generalDiscussion', 'forums.generalDiscussion')->name('forums.generalDiscussion');
-Route::view('/forums/homeworkHelp', 'forums.homeworkHelp')->name('forums.homeworkHelp');
-Route::view('/forums/offTopic', 'forums.offTopic')->name('forums.offTopic');
-Route::view('/forums/support', 'forums.support')->name('forums.support');
-Route::view('/forums/introductions', 'forums.introductions')->name('forums.introductions');
-Route::view('/forums/events', 'forums.events')->name('forums.events');
+Route::view('/forums/General Discussion', 'forums.General Discussion')->name('forums.General Discussion');
+Route::view('/forums/Homework Help', 'forums.Homework Help')->name('forums.Homework Help');
+Route::view('/forums/Off Topic', 'forums.Off Topic')->name('forums.Off Topic');
+Route::view('/forums/Support', 'forums.Support')->name('forums.Support');
+Route::view('/forums/Introductions', 'forums.Introductions')->name('forums.Introductions');
+Route::view('/forums/Events', 'forums.Events')->name('forums.Events');
 
 
 // User Profile routes
@@ -51,13 +51,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/forums/{forum}/edit', [ForumsController::class, 'edit'])->name('forums.crud.edit');
     Route::patch('/forums/{forum}', [ForumsController::class, 'update'])->name('forums.crud.update');
     Route::delete('/forums/{forum}', [ForumsController::class, 'destroy'])->name('forums.crud.destroy');
-    Route::get('/forums/{forum}', [ForumsController::class, 'show'])->name('forums.crud.show');
 });
+
+Route::get('/forums/{forum}', [ForumsController::class, 'show'])->name('forums.crud.show');
 
 // Comments routes
 Route::middleware('auth')->group(function() {
     Route::post('/forums/{forum}/comments', [\App\Http\Controllers\CommentsController::class, 'store'])
         ->name('forums.comments.store');
+    Route::delete('/comments/{comment}', [\App\Http\Controllers\CommentsController::class, 'destroy'])
+        ->name('comments.destroy');
 });
 
 require __DIR__.'/auth.php';
