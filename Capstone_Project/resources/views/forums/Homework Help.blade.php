@@ -52,7 +52,7 @@
 
                             <!-- Date and View Discussion Button-->
                             <div class="flex mt-4">
-                                <p class="text-sm text-white mb-4">
+                                <p class="text-sm text-white mb-4 font-bold">
                                 Posted by {{ $forum->user->name }}
                                 on {{ $forum->created_at->format('M d, Y, h:i A') }}
                                 </p>

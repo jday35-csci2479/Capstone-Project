@@ -59,4 +59,15 @@ class ForumsController extends Controller
 
         return redirect()->route('forums.' . $forum->category, $forum)->with('success', 'Forum created successfully.');
    }
+
+   public function search(Request $request)
+   {
+        $search = $request->input('search', $request->input('query'));
+
+        $forums = Forums::where('title', 'like', '%' . $search . '%')
+                        ->orWhere('body', 'like', '%' . $search . '%')
+                        ->get();
+
+     return view('forums.search', ['results' => $forums, 'query' => $search]);
+   }
 }
