@@ -38,7 +38,7 @@
 
                          <!-- Title and Dropdown menu for Edit and Delete -->   
                         <div class="flex mt-4">
-
+                            
                             <!-- Title -->
                             <h3 class="text-white text-2xl font-bold mb-2">
                                 {{ $forum->title }}
@@ -54,7 +54,7 @@
                         
                             <!-- Date and View Discussion Button-->
                             <div class="flex mt-4">
-                                <p class="text-sm text-white mb-4">
+                                <p class="text-sm text-white mb-4 font-bold">
                                 Posted by {{ $forum->user->name }}
                                 on {{ $forum->created_at->format('M d, Y, h:i A') }}
                                 </p>
