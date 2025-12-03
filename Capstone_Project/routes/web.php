@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\user_profilesController;
+use App\Http\Controllers\ForumReactionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForumsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReactionsController;
+use App\Http\Controllers\user_profilesController;
 
 
 // Default home page routes
@@ -28,6 +30,11 @@ Route::middleware('auth')->group(function() {
     Route::get('/user-profile/edit', [user_profilesController::class, 'edit'])->name('user-profile.edit');
     Route::patch('/user-profile/update', [user_profilesController::class, 'update'])->name('user-profile.update');
 });
+
+//Reactions routes
+Route::post('/forums/{forum}/react', [ForumReactionController::class, 'react'])
+    ->middleware('auth')
+    ->name('forums.reactions.react');
 
 // Forums and comments routes
 

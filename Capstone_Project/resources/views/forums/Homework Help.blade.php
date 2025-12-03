@@ -66,6 +66,9 @@
                                 </div>
                             </div>
 
+                            <!-- Reactions -->
+                            <x-forum-reactions :forum="$forum" />
+
                         </div>
                     @empty
                         <p class="text-white">No posts available</p>
