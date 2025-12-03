@@ -65,6 +65,8 @@
                                     </a>
                                 </div>
                             </div>
+                                <!-- Reactions -->
+                                <x-forum-reactions :forum="$forum" />
 
                         </div>
                     @empty

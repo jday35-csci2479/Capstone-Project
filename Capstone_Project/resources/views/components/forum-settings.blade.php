@@ -10,11 +10,11 @@
 
     <el-menu anchor="bottom end" popover class="w-44 origin-top-right rounded-md bg-gray-700 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete mt-2 data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
         <div class="py-1">
-            <a href="{{ route('forums.crud.edit', $forum) }}" class="block px-4 py-2 text-sm text-gray-300 dark:hover:bg-gray-800 focus:text-white focus:outline-hidden">📝 Edit</a>
+            <a href="{{ route('forums.crud.edit', $forum) }}" class="block px-4 py-2 text-sm text-gray-300 dark:hover:bg-gray-800 focus:text-white focus:outline-hidden"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
             <form action="{{ route('forums.crud.destroy', $forum) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this thread?');">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-300 dark:hover:bg-gray-800 focus:text-white focus:outline-hidden">🗑️ Delete</button>
+                <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-300 dark:hover:bg-gray-800 focus:text-white focus:outline-hidden"><i class="fa-regular fa-trash-can"></i> Delete</button>
             </form>
         </div>
     </el-menu>

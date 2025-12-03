@@ -22,4 +22,19 @@ class Forums extends Model
     {
         return $this->hasMany(Comments::class, 'forum_id');
     }
+
+    public function reactions()
+    {
+        return $this->hasMany(Reaction::class, 'forum_id');
+    }
+
+    public function likes()
+    {
+        return $this->reactions()->where('type', 'like');
+    }
+
+    public function dislikes()
+    {
+        return $this->reactions()->where('type', 'dislike');
+    }
 }

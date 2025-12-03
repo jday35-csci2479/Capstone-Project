@@ -66,8 +66,11 @@
                                         </x-primary-button>
                                     </a>
                                 </div>
+
+                            <!-- Reactions -->
                             </div>
-                        </div>
+                            <x-forum-reactions :forum="$forum" />
+                           </div>
                     @empty
                         <p class="text-white">No posts available</p>
                     @endforelse
